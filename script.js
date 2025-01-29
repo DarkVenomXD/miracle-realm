@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Vérification du statut du serveur Minecraft (remplace l'IP par celle de ton serveur)
-    const serverIP = "your.server.ip"; // Remplace par l'IP de ton serveur
+    // Checking the status of the Minecraft server (replace the IP with your server's IP)
+    const serverIP = "createfriendsmp.falixsrv.me"; // Replace with your server's IP
     const statusElement = document.createElement("p");
     statusElement.style.textAlign = "center";
     statusElement.style.marginTop = "10px";
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => {
-            console.error("Erreur lors de la récupération du statut du serveur", error);
-            statusElement.innerHTML = "⚠️ Impossible de récupérer le statut du serveur";
+            console.error("Error retrieving server status", error);
+            statusElement.innerHTML = "⚠️ Unable to fetch server status";
             statusElement.style.color = "orange";
         });
 
-    // Animation du bouton "Join Now"
+    // "Join Now" button animation
     const joinButton = document.querySelector(".join-button");
     joinButton.addEventListener("mouseover", function () {
         joinButton.style.transform = "scale(1.1)";
@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
         joinButton.style.transform = "scale(1)";
     });
 
-    // Affichage d'annonces dynamiques
+    // Displaying dynamic announcements
     const announcements = [
-        "🚀 Nouveau mod ajouté ! Découvrez-le dès maintenant !",
-        "🎉 Événement spécial ce week-end ! Ne manquez pas ça !",
-        "⚠️ Maintenance prévue demain à 20h UTC."
+        "🚀 New mod added! Check it out now!",
+        "🎉 Special event this weekend! Don't miss it!",
+        "⚠️ Maintenance scheduled tomorrow at 8 PM UTC."
     ];
-    
+
     const announcementElement = document.createElement("div");
     announcementElement.style.position = "fixed";
     announcementElement.style.bottom = "10px";
@@ -64,3 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     showAnnouncement();
 });
+
