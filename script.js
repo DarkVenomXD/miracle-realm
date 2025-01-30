@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Checking the status of the Minecraft server (replace the IP with your server's IP)
-    const serverIP = "createfriendsmp.falixsrv.me"; // Replace with your server's IP
+    // Checking Minecraft server status (replace the IP with your server's IP)
+    const serverIP = "your.server.ip"; // Replace with your server's IP
     const statusElement = document.createElement("p");
     statusElement.style.textAlign = "center";
     statusElement.style.marginTop = "10px";
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => {
-            console.error("Error retrieving server status", error);
-            statusElement.innerHTML = "⚠️ Unable to fetch server status";
+            console.error("Error fetching server status", error);
+            statusElement.innerHTML = "⚠️ Unable to retrieve server status";
             statusElement.style.color = "orange";
         });
 
@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
         joinButton.style.transform = "scale(1)";
     });
 
-    // Displaying dynamic announcements
+    // Dynamic announcements display
     const announcements = [
         "🚀 New mod added! Check it out now!",
         "🎉 Special event this weekend! Don't miss it!",
-        "⚠️ Maintenance scheduled tomorrow at 8 PM UTC."
+        "⚠️ Scheduled maintenance tomorrow at 8 PM UTC."
     ];
-
+    
     const announcementElement = document.createElement("div");
     announcementElement.style.position = "fixed";
     announcementElement.style.bottom = "10px";
@@ -64,4 +64,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     showAnnouncement();
 });
-
