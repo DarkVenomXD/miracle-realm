@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Checking Minecraft server status (replace the IP with your server's IP)
-    const serverIP = "your.server.ip"; // Replace with your server's IP
+    const serverIP = "createfriendsmp.falixsrv.me"; // Replace with your server's IP
     const statusElement = document.createElement("p");
     statusElement.style.textAlign = "center";
     statusElement.style.marginTop = "10px";
