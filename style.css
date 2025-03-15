@@ -78,3 +78,25 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     margin-top: 4rem;
 }
+
+.rules-section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.rules-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.rules-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.rules-section ul li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
