@@ -50,8 +50,23 @@
             background-color: #0056b3;
         }
 
-        .login-container p {
+        .signup-link {
             text-align: center;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -64,7 +79,8 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        <p class="signup-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p class="error-message" id="error-message"></p>
     </div>
 
     <script>
@@ -73,15 +89,18 @@
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
 
-            // Simple client-side check (you can replace this with an actual authentication logic)
-            if (username === 'admin' && password === 'password') { // Example login credentials
-                alert('Login successful!');
-                // Redirect to admin page or dashboard
-                window.location.href = 'admin-dashboard.html'; // Adjust as needed
-            } else {
-                alert('Invalid credentials. Please try again.');
+            // Simple validation checks
+            if (username === "" || password === "") {
+                errorMessage.textContent = "Both fields are required!";
+                return;
             }
+
+            // Example of login success
+            alert("Login successful!");
+            // Redirect to the main page or dashboard
+            window.location.href = "index.html"; // Adjust this according to your page structure
         });
     </script>
 
