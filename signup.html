@@ -6,7 +6,7 @@
     <title>Sign Up</title>
     <style>
         body {
-            font-family: 'Minecraft', Arial, sans-serif;
+            font-family: 'Minecraft', Arial, sans-serif; /* Minecraft font */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,30 +50,24 @@
             background-color: #218838;
         }
 
-        .signup-container p {
+        .login-link {
             text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
         }
 
         .error-message {
             color: red;
             text-align: center;
             font-size: 0.9rem;
-        }
-
-        .login-btn {
-            background-color: #007bff;
-            border-radius: 4px;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .login-btn:hover {
-            background-color: #0056b3;
         }
     </style>
 </head>
@@ -83,13 +77,11 @@
         <h2>Sign Up</h2>
         <form id="signupForm">
             <input type="text" id="username" name="username" placeholder="Username" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
             <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
-        <a href="login.html" class="login-btn">Go to Login</a>
+        <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
         <p class="error-message" id="error-message"></p>
     </div>
 
@@ -98,28 +90,25 @@
             event.preventDefault(); // Prevent form submission
             
             const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
             const errorMessage = document.getElementById('error-message');
 
             // Simple validation checks
+            if (username === "" || password === "" || confirmPassword === "") {
+                errorMessage.textContent = "All fields are required!";
+                return;
+            }
+
             if (password !== confirmPassword) {
-                errorMessage.textContent = 'Passwords do not match. Please try again.';
+                errorMessage.textContent = "Passwords do not match!";
                 return;
             }
 
-            // Simple email format validation
-            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!emailRegex.test(email)) {
-                errorMessage.textContent = 'Please enter a valid email address.';
-                return;
-            }
-
-            // If all checks pass
-            alert('Sign Up successful!');
-            // Redirect to login page or another page after successful registration
-            window.location.href = 'login.html'; // Adjust as needed
+            // Example of signup success
+            alert("Sign Up successful!");
+            // Redirect to the login page
+            window.location.href = "login.html"; // Adjust this according to your page structure
         });
     </script>
 
