@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Your existing code here...
-    
     // Example: Check if the user is an admin
     const isAdmin = false; // Change this based on your admin check logic (e.g., session, cookie, etc.)
 
@@ -15,8 +13,23 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = 'index.html';  // Redirect to another page, like index.html
     }
 
-    // Your existing code continues here...
+    // Add the Login button if the user is not logged in
+    const isLoggedIn = false; // Replace with your actual login check logic
+    const header = document.querySelector("header"); // Assuming you want to place the button in the header
+    if (!isLoggedIn && header) {
+        const loginButton = document.createElement("button");
+        loginButton.textContent = "Login";
+        loginButton.classList.add("login-btn");
+        loginButton.addEventListener("click", function() {
+            // Your login logic goes here
+            alert("Redirecting to login page...");
+            window.location.href = 'login.html';  // Redirect to the login page (you can adjust the URL)
+        });
+        header.appendChild(loginButton); // Add the button to the header
+    }
+
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     // Checking Minecraft server status (replace the IP with your server's IP)
     const serverIP = "createfriendsmp.falixsrv.me"; // Replace with your server's IP
