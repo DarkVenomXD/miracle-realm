@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Your existing code here...
+    
+    // Example: Check if the user is an admin
+    const isAdmin = false; // Change this based on your admin check logic (e.g., session, cookie, etc.)
+
+    // Hide the link to map.html if the user is not an admin
+    const mapLink = document.querySelector("a[href='map.html']");
+    if (mapLink && !isAdmin) {
+        mapLink.style.display = "none";  // Hides the map link
+    }
+
+    // Redirect non-admin users if they try to access map.html directly
+    if (window.location.pathname === '/map.html' && !isAdmin) {
+        window.location.href = 'index.html';  // Redirect to another page, like index.html
+    }
+
+    // Your existing code continues here...
+});
+document.addEventListener("DOMContentLoaded", function () {
     // Checking Minecraft server status (replace the IP with your server's IP)
     const serverIP = "createfriendsmp.falixsrv.me"; // Replace with your server's IP
     const statusElement = document.createElement("p");
